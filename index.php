@@ -40,7 +40,7 @@ require 'head.php';
         }
         echo '</h3>
           </header>';
-        $sql = "SELECT * FROM cards WHERE parentId=$i AND boardId='$board_id' ORDER BY color DESC, name";
+        $sql = "SELECT * FROM cards WHERE columnId=$i AND parentId=-1 AND boardId='$board_id' ORDER BY color DESC, name";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
         // output data of each row
@@ -75,7 +75,7 @@ require 'head.php';
               if (!isset($_GET["visit"])){echo '<img class="interact fr delete-archive mr-2" src="media/trash.png" alt"archiv löschen" width="18px">';}
               echo '</h3>
           </header>';
-      $sql = "SELECT * FROM cards WHERE parentId=5 AND boardId='$board_id' ORDER BY color DESC";
+      $sql = "SELECT * FROM cards WHERE columnId=5 AND parentId=-1 AND boardId='$board_id' ORDER BY color DESC";
       $result = $conn->query($sql);
       if ($result->num_rows > 0) {
       // output data of each row
