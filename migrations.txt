@@ -1,0 +1,3 @@
+20210811 - Migration um subtasks erstellen zu können
+  ALTER TABLE `cards` CHANGE `parentId` `columnId` INT(16) NOT NULL;
+  ALTER TABLE `cards` ADD `parentId` INT NOT NULL DEFAULT '-1' AFTER `id`;

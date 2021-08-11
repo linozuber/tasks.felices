@@ -6,7 +6,7 @@ $card_name = $_POST["card-name"];
 $card_descr = $_POST["card-descr"];
 $card_color = $_POST["card-color"];
 
-$sql = "INSERT INTO cards (id, parentId, boardId, name, descr, color, done)
+$sql = "INSERT INTO cards (id, columnId, boardId, name, descr, color, done)
 VALUES (NULL, 0, '$board_id', '$card_name', '$card_descr', '$card_color', 0)";
 
 if ($conn->query($sql) === TRUE) {
